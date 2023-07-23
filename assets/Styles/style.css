@@ -1,0 +1,771 @@
+@charset "UTF-8";
+:root {
+  --jaune1: #FFFF00;
+  --jaune1: #F8F184;
+  --bleue: #19587D;
+  --rouge: #B11213;
+  --noir1: #0D0E09;
+  --gris: #C4C4C4;
+  --noir2: #000000;
+  --blanc: #FFFFFF;
+  --gradient-bleue: linear-gradient(to right, #fdfdfd7e 10%, #146696c2 60%);
+  --gradient-rouge: linear-gradient(to right, rgba(237, 222, 223, 0.349) 40%, rgba(137, 0, 9, 0.356) 100%);
+  --gradient-orange: linear-gradient(to right, rgba(237, 222, 223, 0.349) 20%, rgba(163, 54, 4, 0.356) 100%);
+}
+
+/* Les polices */
+@font-face {
+  font-family: "spacegrotesk";
+  src: url("../Polices/spaceGrotesk/spacegrotesk-variablefont_wght-webfont.woff2") format("woff2"), url("../../Polices/spaceGrotesk/spacegrotesk-variablefont_wght-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "rajdhani";
+  src: url("../Polices/rajhani/rajdhani-regular-webfont.woff2") format("woff2"), url("../../Polices/rajhani/rajdhani-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+/* footer */
+footer {
+  margin-top: 100px;
+  /* Les icones tout en bas */
+}
+footer .copyright {
+  width: 100%;
+  margin-top: 3em;
+  right: 0;
+  text-align: center;
+  justify-content: center;
+  color: white;
+}
+footer .copyright label {
+  font-size: 10px;
+}
+footer .icons-footer {
+  margin-top: 10px;
+  margin-bottom: 50px;
+}
+footer .icons-footer img {
+  margin-left: 20px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* Général */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h2, h3 {
+  font-size: 1.5em;
+  margin-bottom: 1em;
+}
+
+p {
+  font-size: 18px;
+  font-family: "spacegrotesk";
+}
+
+.visible {
+  transform: scale(1.2); /* Définit l'échelle finale à 1 */
+  transition-delay: 8s;
+}
+
+/* Container de tous le corps du site */
+.container {
+  padding-top: 2em;
+  padding-bottom: 2em;
+  margin-right: 102px;
+  margin-left: 102px;
+  border: 0.3em solid rgba(188, 187, 189, 0.137254902);
+  border-top: none;
+  max-width: 100%;
+}
+
+header {
+  padding-bottom: 50px;
+  border-bottom: 0.3em solid rgba(188, 187, 189, 0.137254902);
+  /* Navbar */
+}
+header nav {
+  display: flex;
+  justify-content: space-between;
+  margin: 0px 132px 10px 100px;
+  align-items: center;
+  /* Annimation des logos qui passent aux jaunes */
+}
+header nav .logo {
+  transition: all 0.3s ease-in-out;
+}
+header nav .logo:hover {
+  filter: invert(13%) sepia(70%) saturate(5);
+}
+header nav a {
+  color: white;
+  font-size: 30px;
+  text-decoration-line: none;
+}
+header nav ul {
+  display: flex;
+  justify-content: space-around;
+}
+header nav li {
+  width: 20px;
+  margin-left: 100px;
+  list-style: none;
+  font-weight: lighter;
+  font-family: "rajdhani";
+  color: white;
+}
+header nav li:hover {
+  font-weight: bold;
+  -webkit-text-decoration: underline 3px;
+          text-decoration: underline 3px;
+}
+header nav .current {
+  -webkit-text-decoration: underline 1px;
+          text-decoration: underline 1px;
+  text-underline-offset: 5px;
+}
+
+body {
+  background-image: url(../Illustrations/Bathome1.png);
+  background-position: top;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-color: #000000;
+  font-family: "spacegrotesk";
+  overflow-x: hidden;
+  animation: body 2s ease-out forwards;
+}
+
+/* Annimation venant de la droite pour tous les éléments sauf les social-icons */
+section {
+  animation: section 2s ease-out;
+}
+
+@keyframes section {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+button, .confirm-btn {
+  height: 50px;
+  width: 200px;
+  margin: 10px;
+  font-family: "rajdhani";
+  color: white;
+  font-size: 15px;
+  background: var(--gradient-rouge);
+  cursor: pointer;
+  border: 0;
+}
+
+button:hover {
+  background: linear-gradient(to right, rgba(237, 222, 223, 0.384) 100%, rgba(137, 0, 9, 0.411) 100%);
+}
+
+/* Les sections heros*/
+.hero {
+  font-size: 20px;
+  color: white;
+  max-width: 550px;
+  margin: 0 auto;
+  text-align: center;
+}
+.hero p {
+  justify-content: center;
+  margin-top: 8em;
+  margin-bottom: 0.8em;
+  line-height: 1.2em;
+  font-weight: 500;
+}
+.hero a {
+  justify-content: center;
+}
+.hero .fleche {
+  margin-top: 350px;
+}
+
+/* Les icons média sur la droite */
+.social-icons {
+  position: fixed;
+  right: 22px;
+  top: 200px;
+  z-index: 9999;
+}
+.social-icons a {
+  margin-bottom: 10px;
+  display: flex;
+  margin: 30px;
+  justify-content: center;
+}
+
+section {
+  padding: 3em;
+  /* Les articles et les cards */
+}
+section .card-section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-flow: column;
+  grid-gap: 0px;
+  align-items: center;
+  opacity: 0;
+  transform: translateX(-50%);
+}
+section .card-section img {
+  width: 17em;
+  height: auto;
+}
+section .card-section .perso {
+  background: linear-gradient(to right, rgba(237, 222, 223, 0.384) 10%, rgba(219, 5, 19, 0.411) 100%);
+  width: 200px;
+  margin: 10px auto;
+  border-radius: 50px;
+  padding: 12px;
+  line-height: 17px;
+  font-size: 12px;
+}
+section .card-section .desc img {
+  display: block;
+  float: left;
+  width: 70px;
+}
+section .card-section-visible {
+  opacity: 1;
+  transform: translateX(0);
+  transition: 2s cubic-bezier(0.5, 0, 0, 1);
+}
+
+.article {
+  width: 90%;
+  padding: 2em;
+  font-size: 20px;
+  text-align: justify;
+  color: white;
+  line-height: 1.2em;
+}
+
+/* Annimation des div */
+.card {
+  border-radius: 5px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transition: all 3s ease-out;
+  margin-top: 3em;
+  margin-bottom: 3em;
+}
+.card:hover {
+  transform: scale(1.1);
+}
+
+.card div {
+  border: 1px solid rgba(141, 141, 141, 0.596);
+  background-color: rgba(43, 33, 29, 0.4431372549);
+  position: relative;
+  top: -102px;
+  width: 272px;
+  height: 100px;
+  display: none;
+  margin: 0 auto;
+  padding: 10px;
+  transition: all 3s ease-out;
+}
+
+.card p {
+  color: white;
+  font-size: 1em;
+  font-weight: bold;
+  margin-top: 1em;
+}
+
+/* Le batarang qui et à travers le texte Nemesis */
+.article img {
+  position: absolute;
+  z-index: -1;
+  margin-left: 60px;
+  margin-top: -77px;
+}
+
+/* La photo de batman sur le côté */
+.batman {
+  position: relative;
+  top: 2650px;
+  right: 0px;
+  width: 400px;
+  height: 290px;
+}
+
+.centree {
+  width: 80%;
+  display: block;
+  margin: 0 auto;
+}
+
+/* La photo de la justice league au complet */
+.justiceLeague {
+  width: 100%;
+  position: absolute;
+  padding-top: 700px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Maintenant le div MULTIMEDIA */
+.text-m {
+  font-size: 1.5em;
+  margin-bottom: 1em;
+  margin-top: 650px;
+  padding: 20px;
+  color: white;
+}
+
+.multimedia {
+  display: grid;
+  color: white;
+  grid-template-columns: 1fr 2fr 1fr;
+  align-items: center;
+  margin-bottom: 100px;
+}
+.multimedia .card-multimedia {
+  width: 110%;
+  height: 220px;
+  display: flex;
+  flex-direction: row;
+  border-radius: 10px;
+  overflow: hidden;
+  background: linear-gradient(to right, rgba(155, 153, 153, 0.4941176471) 10%, rgba(9, 56, 83, 0.7607843137) 60%);
+}
+.multimedia .card-multimedia img {
+  width: 220px;
+  height: 220px;
+}
+.multimedia .card-multimedia .text {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  overflow: auto;
+}
+.multimedia .card-multimedia .text #titre {
+  font-family: "rajdhani";
+  font-size: 14px;
+  font-weight: 1;
+  margin-bottom: 10px;
+}
+.multimedia .card-multimedia h4 {
+  font-size: 0.8rem;
+  font-weight: bold;
+  opacity: 70%;
+  margin-bottom: 5px;
+  letter-spacing: 1px;
+}
+.multimedia .card-multimedia label {
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+.multimedia .card-multimedia p {
+  font-size: 0.7rem;
+  color: var(--blanc);
+  margin-top: 10px;
+  line-height: 1.4em;
+}
+
+/* Position de la dernière flèche */
+.last-grid {
+  grid-column-start: 4;
+  grid-column-end: 4;
+}
+
+.bande-annonce {
+  text-align: center;
+}
+.bande-annonce img {
+  width: 90%;
+}
+
+/* Le formulaire de contact */
+.contact {
+  width: 100%;
+  background: linear-gradient(160deg, rgba(75, 74, 74, 0.9921568627) 10%, rgba(15, 32, 43, 0.9607843137) 60%);
+  position: absolute;
+  height: auto;
+  margin-top: 140px;
+  right: 0;
+  border: 1px solid rgba(128, 128, 128, 0.664);
+  /* Formulaire de contact */
+}
+.contact input[type=text], .contact #formulaire-contact input[type=email] {
+  width: 100%;
+  border: none;
+  background-color: transparent;
+  border-bottom: 1px solid white;
+  margin-top: 10px;
+  margin-bottom: 25px;
+  color: white;
+  opacity: 90%;
+}
+.contact #formulaire-contact {
+  width: 40%;
+  color: white;
+  margin: 0 auto;
+  margin-top: 50px;
+  justify-content: center;
+  /* Le code pour le select Customisé */
+  /* Pour positioner les boutons */
+}
+.contact #formulaire-contact h3 {
+  text-align: center;
+  font-size: 25px;
+  letter-spacing: 1px;
+  margin-bottom: 70px;
+}
+.contact #formulaire-contact h4 {
+  font-size: 20px;
+  font-weight: 1;
+}
+.contact #formulaire-contact .checkbox-form {
+  width: 90%;
+  margin: 10px 0px 10px 0px;
+}
+.contact #formulaire-contact .checkbox-form label {
+  opacity: 50%;
+}
+.contact #formulaire-contact select {
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: none;
+  border-bottom: 1px solid white;
+  color: white;
+  background-color: transparent;
+  opacity: 50%;
+}
+.contact #formulaire-contact select option {
+  color: var(--noir2);
+}
+.contact #formulaire-contact #frequence {
+  -webkit-appearance: none; /* Masquer l'apparence par défaut */
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url("../Logos/Fleche2_avec_rotation.png");
+  background-repeat: no-repeat;
+  background-size: 16px;
+  background-position: right center;
+  padding-right: 20px;
+  padding-bottom: 5px;
+  cursor: pointer;
+}
+.contact #formulaire-contact input[type=radio] {
+  opacity: 0;
+}
+.contact #formulaire-contact .div-btn label {
+  cursor: pointer;
+  border: 2px solid;
+  padding: 10px;
+  width: 120px;
+  height: 40px;
+  -o-border-image: var(--gradient-bleue) 1;
+     border-image: var(--gradient-bleue) 1;
+  border-image-slice: 1;
+  text-align: center;
+  vertical-align: middle;
+  margin-bottom: 20px;
+}
+.contact #formulaire-contact .div-btn label:hover {
+  background-color: var(--bleue);
+}
+.contact #formulaire-contact .div-btn {
+  display: flex;
+  justify-content: space-around;
+}
+.contact #formulaire-contact .confirm-btn {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 50px;
+}
+
+/* Popup */
+.popup {
+  background: linear-gradient(118deg, rgba(126, 125, 125, 0.9921568627) 10%, rgba(23, 50, 70, 0.9607843137) 80%);
+  width: 700px;
+  height: 25em;
+  border-radius: 15px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.1);
+  text-align: center;
+  padding: 0 30px 30px;
+  color: #333;
+  visibility: hidden;
+  transition: transform 0.5s;
+}
+.popup h1 {
+  margin-top: 25%;
+  color: white;
+}
+
+.hide {
+  visibility: hidden;
+}
+
+.popup-ouvert {
+  transform: translate(-50%, -50%) scale(1);
+  visibility: visible;
+}
+
+/* Maintenant la section citation */
+.citation {
+  margin-left: 10px;
+  display: flex;
+  justify-content: center;
+  padding-top: 1000px;
+  margin: 0 auto;
+  color: white;
+  flex-wrap: wrap;
+  /* Les appostrophes */
+  /* Les petits points de navigation */
+}
+.citation .quot-o {
+  top: 0;
+}
+.citation .text-citation {
+  width: 60%;
+  text-align: center;
+  padding: 5em;
+  line-height: 1.5em;
+}
+.citation .text-citation p + p {
+  font-size: 11px;
+  margin-top: 1.5em;
+}
+.citation .nav-point {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+.citation .dot {
+  width: 5px;
+  height: 5px;
+  margin: 0 5px;
+  border: 1px solid #19587D;
+  border-radius: 50%;
+  background-color: var(--noir2);
+}
+.citation .active {
+  background-color: var(--bleue);
+}
+.citation .quot-f img {
+  position: relative;
+  margin-top: 200px;
+}
+
+/* Responsivité */
+@media screen and (max-width: 1120px) {
+  section {
+    padding: 0px 10px 0px 10px;
+  }
+  .hero p {
+    margin-top: 10em;
+  }
+  .social-icons img {
+    margin-right: -90px;
+    width: 200%;
+  }
+  .social-icons .bat {
+    margin-right: -90px;
+    width: 450%;
+  }
+  .card-section {
+    display: inline;
+  }
+  .article {
+    width: 90%;
+    font-size: 1.2em;
+    padding-left: 5%;
+  }
+  .card-section .card .perso {
+    width: 150px;
+    height: 55px;
+    padding: 8px;
+    line-height: 11px;
+    font-size: 8px;
+  }
+  .card-section .card div {
+    width: 70%;
+    height: auto;
+  }
+  .card-section .card img {
+    width: 70%;
+    height: auto;
+  }
+  .batman {
+    visibility: hidden;
+  }
+  .container {
+    justify-content: center;
+    margin: 10px;
+    padding: 0;
+  }
+  .card-multimedia img {
+    width: 20%;
+  }
+  .bande-annonce img {
+    width: 80%;
+    height: auto;
+    padding: 2em;
+    align-items: center;
+    justify-content: center;
+  }
+  .justiceLeague {
+    justify-content: center;
+    padding-top: 25em;
+  }
+  .text-m {
+    margin-top: 500px;
+  }
+  #formulaire-contact {
+    width: 70%;
+  }
+  footer .copyright {
+    margin-left: 0;
+  }
+  .icons-footer .logo {
+    width: 1.5rem;
+  }
+}
+@media screen and (max-width: 869px) {
+  .card-multimedia {
+    background-color: #19587D;
+  }
+  .card-multimedia img {
+    display: none;
+    background-color: #19587D;
+  }
+  .card-multimedia .text {
+    width: 100%;
+    background-color: #19587D;
+  }
+  .text-m {
+    margin-top: 500px;
+  }
+  .bande-annonce {
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+  }
+  .formulaire-contact {
+    padding: 0;
+    margin: 0;
+    width: 150%;
+  }
+  .citation {
+    display: inline-block;
+    text-align: center;
+  }
+  .citation .text-citation {
+    display: inline-block;
+    text-align: center;
+  }
+  .quot-o img {
+    margin-top: 2rem;
+  }
+  .quot-f img {
+    margin-top: 1rem;
+  }
+  footer .copyright {
+    margin-left: 0;
+  }
+}
+@media screen and (max-width: 700px) {
+  header nav {
+    margin: 0px 132px 0px 20px;
+  }
+  .hero .fleche {
+    margin-top: 100px;
+  }
+  .article {
+    font-size: 1.1em;
+  }
+  .card-section {
+    display: block;
+    margin: 0 auto;
+  }
+  .card-section .card .desc p {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    width: 90px;
+  }
+  .card-section .card .desc img {
+    display: none;
+  }
+  .text-m {
+    margin-top: 400px;
+  }
+  .bande-annonce img {
+    padding: 0;
+    margin: 0;
+  }
+  footer .quot-o {
+    width: 40px;
+    height: auto;
+    margin-left: 2em;
+  }
+  footer .quot-f {
+    width: 40px;
+    height: auto;
+    margin-left: 0;
+  }
+  footer .copyright {
+    margin-left: 0;
+  }
+}
+@media screen and (max-width: 450px) {
+  header nav img {
+    display: none;
+  }
+  .social-icons img {
+    width: 150%;
+  }
+  .social-icons .bat {
+    width: 200%;
+  }
+  .hero .fleche {
+    margin-top: 100px;
+  }
+  .container {
+    margin: 0;
+  }
+  .article {
+    font-size: 1em;
+  }
+  .text-m {
+    margin-top: 400px;
+  }
+  footer .quot-o {
+    width: 40px;
+    height: auto;
+    margin-left: 2em;
+  }
+  footer .quot-f {
+    width: 40px;
+    height: auto;
+    margin-left: 0;
+  }
+  footer .copyright {
+    margin-left: 0;
+  }
+}/*# sourceMappingURL=style.css.map */
